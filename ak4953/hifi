@@ -1,0 +1,92 @@
+# Use case Configuration for Mobile device
+# By Inha Song <ideal.song@samsung.com>
+
+SectionVerb {
+  EnableSequence [
+  ]
+  DisableSequence [
+  ]
+
+  Value {
+    TQ "Music"
+    PlaybackCTL "hw:0"
+    CaptureCTL "hw:0"
+  }
+}
+
+SectionDevice."Headphones" {
+  Comment "3.5mm Headphones"
+
+  EnableSequence [
+    cset "name='Digital Output Volume1 L (Manual Mode)' 145"
+    cset "name='Digital Output Volume1 R (Manual Mode)' 145"
+    cset "name='DACHP' 1"
+    cset "name='Mic Gain Control' 3"
+    cset "name='Mic Bias MUX' 'IN1'"
+    cset "name='IN1 MUX' 'Mic Bias'"
+    cset "name='Input Select MUX' 'LIN1/RIN1'"
+    cset "name='ADC MUX1' 'Mono'"
+    cset "name='MIC MUX' 'AMIC'"
+    cset "name='ADCPF MUX' 'ADC'"
+  ]
+
+  DisableSequence [
+    cset "name='DACHP' 0"
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+SectionDevice."Speaker" {
+  Comment "built-in Speaker"
+
+  EnableSequence [
+    cset "name='Digital Output Volume1 L (Manual Mode)' 145"
+    cset "name='Digital Output Volume1 R (Manual Mode)' 145"
+    cset "name='DACHP' 1"
+    cset "name='Mic Gain Control' 3"
+    cset "name='Mic Bias MUX' 'IN1'"
+    cset "name='IN1 MUX' 'Mic Bias'"
+    cset "name='Input Select MUX' 'LIN1/RIN1'"
+    cset "name='ADC MUX1' 'Mono'"
+    cset "name='MIC MUX' 'AMIC'"
+    cset "name='ADCPF MUX' 'ADC'"
+  ]
+
+  DisableSequence [
+# Path
+    cset "name='DACHP' 0"
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+SectionDevice."MainMic" {
+  Comment "built-in main mic"
+
+  EnableSequence [
+    cset "name='Digital Output Volume1 L (Manual Mode)' 145"
+    cset "name='Digital Output Volume1 R (Manual Mode)' 145"
+    cset "name='DACHP' 1"
+    cset "name='Mic Gain Control' 3"
+    cset "name='Mic Bias MUX' 'IN1'"
+    cset "name='IN1 MUX' 'Mic Bias'"
+    cset "name='Input Select MUX' 'LIN1/RIN1'"
+    cset "name='ADC MUX1' 'Mono'"
+    cset "name='MIC MUX' 'AMIC'"
+    cset "name='ADCPF MUX' 'ADC'"
+  ]
+
+  DisableSequence [
+# Path
+    cset "name='DACHP' 0"
+  ]
+
+  Value {
+    CapturePCM "hw:0,0"
+  }
+}
